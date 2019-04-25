@@ -1,6 +1,8 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/htmltemplates/head.php');
 require($_SERVER['DOCUMENT_ROOT'].'/htmltemplates/body.php');
+require($_SERVER['DOCUMENT_ROOT'].'/htmltemplates/nav.php');
+
 function head($title = '')
 {
   global $cfg;
