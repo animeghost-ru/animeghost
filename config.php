@@ -13,7 +13,7 @@ $cfg['dbpass'] = 'Mesina226';
 
 #html file config#
 $cfg['title_index'] = 'AnimeGhost - мир РуАниме!';
-$cfg['description'] = '';
+$cfg['description'] = 'Animeghost Website';
 $cfg['og'] = '';
 $cfg['page'] = 'index';
 $cfg['ip'] = $_SERVER['REMOTE_ADDR'];

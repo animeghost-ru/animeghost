@@ -4,12 +4,16 @@ body {
   background: url(/bg/bg1.jpg);
   font-family: 'Exo 2', sans-serif;
 }
-
-.nav {
+.navContainer {
   font-weight: 400;
-  width: 1000px;
   height: 32px;
   margin-left: 20%;
+  margin-right: 20%;
+}
+
+.navMenu {
+  width: 458px;
+  height: 32px;
   background-color: white;
   border-radius: 5px;
 }
@@ -19,6 +23,7 @@ body {
 }
 
 .navList1 {
+  margin: 0px;
   display: inline-grid;
   text-align: center;
   width: 100px;
@@ -34,6 +39,7 @@ body {
 }
 
 .navList2, .navList3 {
+  margin: 0px;
   display: inline-grid;
   text-align: center;
   width: 100px;
@@ -47,7 +53,23 @@ body {
   transition: background 1s ease-out 0s;
 }
 
-.navList1:hover, .navList2:hover, .navList3:hover {
+.navList4 {
+  margin: 0px;
+  display: inline-grid;
+  text-align: center;
+  width: 150px;
+  height: 30px;
+  border-radius: 0 5px 5px 0;
+  background: #999999;
+  cursor: pointer;
+  border: 1px solid white;
+  -webkit-transition: background 1s ease-out 0s;
+  -moz-transition: background 1s ease-out 0s;
+  -o-transition: background 1s ease-out 0s;
+  transition: background 1s ease-out 0s;
+}
+
+.navList1:hover, .navList2:hover, .navList3:hover, .navList4:hover {
   background: white;
   font-weight: 700;
 }
