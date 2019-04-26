@@ -15,12 +15,21 @@ elseif ($_SERVER['REQUEST_URI'] == '/anime')
 {
   head('Список Аниме');
   bodyStart();
+  navMenu();
+  bodyEnd();
+}
+elseif ($_SERVER['REQUEST_URI'] == '/manga')
+{
+  head('Список Манги');
+  bodyStart();
+  navMenu();
   bodyEnd();
 }
 else
 {
   head('Что-то пошло не так!');
   bodyStart();
+  navMenu();
   not_existing_page($_SERVER['REQUEST_URI']);
   bodyEnd();
 }

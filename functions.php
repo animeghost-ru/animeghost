@@ -30,8 +30,7 @@ function navMenu()
 
 function not_existing_page($page)
 {
-  echo 'Страницы '.$page.' - не существует, переходим на главную страницу через 3 секунды!';
-  die;
+  echo '<p style="color: white;">Страницы '.$page.' - не существует, переходим на главную страницу через 3 секунды!</p>';
 }
 
 

@@ -1,24 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900&subset=cyrillic');
+
 body {
   background: url(/bg/bg1.jpg);
+  font-family: 'Exo 2', sans-serif;
 }
 
 .nav {
+  font-weight: 400;
   width: 1000px;
-  height: 50px;
+  height: 32px;
   margin-left: 20%;
   background-color: white;
   border-radius: 5px;
 }
 
-.navList1 {
-  text-align: center;
-  width: 100px;
-  height: 50px;
-  border-radius: 5px 0 0 5px;
-  background: grey;
-  cursor: pointer;
+.navP {
+  margin-block-start: 0.25em;
 }
 
-.navList1:hover {
+.navList1 {
+  display: inline-grid;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px 0 0 5px;
+  background: #999999;
+  cursor: pointer;
+  border: 1px solid white;
+  -webkit-transition: background 1s ease-out 0s;
+  -moz-transition: background 1s ease-out 0s;
+  -o-transition: background 1s ease-out 0s;
+  transition: background 1s ease-out 0s;
+}
+
+.navList2, .navList3 {
+  display: inline-grid;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  background: #999999;
+  cursor: pointer;
+  border: 1px solid white;
+  -webkit-transition: background 1s ease-out 0s;
+  -moz-transition: background 1s ease-out 0s;
+  -o-transition: background 1s ease-out 0s;
+  transition: background 1s ease-out 0s;
+}
+
+.navList1:hover, .navList2:hover, .navList3:hover {
   background: white;
+  font-weight: 700;
 }
