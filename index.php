@@ -25,6 +25,23 @@ elseif ($_SERVER['REQUEST_URI'] == '/manga')
   navMenu();
   bodyEnd();
 }
+elseif ($_SERVER['REQUEST_URI'] == '/profile')
+{
+  head('Профиль пользователя - '.$_SESSION['user']);
+  bodyStart();
+  navMenu();
+  bodyEnd();
+}
+elseif ($_SERVER['REQUEST_URI'] == '/auth')
+{
+  head('Авторизация');
+  bodyStart();
+  navMenu();
+
+  authPage();
+
+  bodyEnd();
+}
 else
 {
   head('Что-то пошло не так!');

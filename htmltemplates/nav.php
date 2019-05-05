@@ -1,16 +1,26 @@
 <?
   function echoNavMenu()
   {
+    if (empty($_SESSION['user']))
+    {
+      $navLink = '/auth';
+      $navText = 'Авторизация';
+    }
+    else
+    {
+      $navLink = '/profile';
+      $navText = 'Профиль';
+    }
     echo '
-    <div class="navContainer">
-      <div class="navMenu">
-        <div class="navList1"><p class="navP">Главная</p></div>
-        <div class="navList2"><p class="navP">Аниме</p></div>
-        <div class="navList3"><p class="navP">Манга</p></div>
-        <div class="navList4"><p class="navP">Случайный Тайтл</p></div>
-
-        <input class="from-control">
-      </div>
+    <div class="header">
+      <nav class="navMenu">
+        <a class="navList" href="/">Главная</a>
+        <a class="navList" href="/anime">Аниме</a>
+        <a class="navList" href="/manga">Манга</a>
+        <a class="navList" href="/">Случайный Тайтл</a>
+        <a class="navList" href="'.$navLink.'">'.$navText.'</a>
+        <div class="l"></div>
+      </nav>
     </div>
     ';
   }

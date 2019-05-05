@@ -1,75 +1,99 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900&subset=cyrillic');
 
 body {
-  background: url(/bg/bg1.jpg);
+  background: url(/bg/bg2.jpg);
   font-family: 'Exo 2', sans-serif;
+  color: white !important;
 }
-.navContainer {
-  font-weight: 400;
-  height: 32px;
+
+.header {
+  margin-top: 0px !important;
+  width: 100%;
+  height: 30px;
+  background: #3b3b3b;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.navMenu{
+  margin-left: 20%;
+}
+
+.navList{
+  color: white !important;
+  text-decoration:none !important;
+  color:#fff;
+  width:200px;
+  display:inline-block;
+  text-align:center;
+  transition:all .33s linear;
+  -webkit-transition:all .33s linear;
+}
+
+.l{
+  width:200px;
+  height:2px;
+  background:#fff;
+}
+
+.navList:nth-child(1) ~ .l{
+  transition:all .33s linear;
+  -webkit-transition:all .33s linear;
+}
+
+.navList:nth-child(2):hover ~ .l {
+  transform:translate(200px);
+  -webkit-transform:translate(200px);
+  background-color:#e74c3c;
+  transition:all .33s linear;
+  -webkit-transition:all .33s linear;
+}
+
+.navList:nth-child(3):hover ~ .l {
+  transform:translate(200px);
+  -webkit-transform:translate(400px);
+  background-color:#BF55EC;
+  transition:all .33s linear;
+  -webkit-transition:all .33s linear;
+}
+
+.navList:nth-child(4):hover ~ .l {
+  transform:translate(200px);
+  -webkit-transform:translate(600px);
+  background-color:#f39c12;
+  transition:all .33s linear;
+  -webkit-transition:all .33s linear;
+}
+
+.navList:nth-child(5):hover ~ .l {
+  transform:translate(200px);
+  -webkit-transform:translate(800px);
+  background-color:#3caa3c;
+  transition:all .33s linear;
+  -webkit-transition:all .33s linear;
+}
+
+.navList:nth-child(2):hover {
+  color:#e74c3c !important;
+}
+
+.navList:nth-child(3):hover {
+  color:#BF55EC !important;
+}
+
+.navList:nth-child(4):hover {
+  color:#f39c12 !important;
+}
+
+.navList:nth-child(5):hover {
+  color:#3caa3c !important;
+}
+
+.sblock {
+  margin: 5px;
   margin-left: 20%;
   margin-right: 20%;
-}
-
-.navMenu {
-  width: 458px;
-  height: 32px;
-  background-color: white;
-  border-radius: 5px;
-}
-
-.navP {
-  margin-block-start: 0.25em;
-}
-
-.navList1 {
-  margin: 0px;
-  display: inline-grid;
-  text-align: center;
-  width: 100px;
-  height: 30px;
-  border-radius: 5px 0 0 5px;
-  background: #999999;
-  cursor: pointer;
-  border: 1px solid white;
-  -webkit-transition: background 1s ease-out 0s;
-  -moz-transition: background 1s ease-out 0s;
-  -o-transition: background 1s ease-out 0s;
-  transition: background 1s ease-out 0s;
-}
-
-.navList2, .navList3 {
-  margin: 0px;
-  display: inline-grid;
-  text-align: center;
-  width: 100px;
-  height: 30px;
-  background: #999999;
-  cursor: pointer;
-  border: 1px solid white;
-  -webkit-transition: background 1s ease-out 0s;
-  -moz-transition: background 1s ease-out 0s;
-  -o-transition: background 1s ease-out 0s;
-  transition: background 1s ease-out 0s;
-}
-
-.navList4 {
-  margin: 0px;
-  display: inline-grid;
-  text-align: center;
-  width: 150px;
-  height: 30px;
-  border-radius: 0 5px 5px 0;
-  background: #999999;
-  cursor: pointer;
-  border: 1px solid white;
-  -webkit-transition: background 1s ease-out 0s;
-  -moz-transition: background 1s ease-out 0s;
-  -o-transition: background 1s ease-out 0s;
-  transition: background 1s ease-out 0s;
-}
-
-.navList1:hover, .navList2:hover, .navList3:hover, .navList4:hover {
-  background: white;
-  font-weight: 700;
+  background-color: #3b3b3b;
+  padding: 20px;
+  border-radius: 7px;
 }
