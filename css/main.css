@@ -16,7 +16,7 @@ body {
 }
 
 .navMenu{
-  margin-left: 20%;
+  margin-left: 23%;
 }
 
 .navList{
@@ -39,6 +39,7 @@ body {
 .navList:nth-child(1) ~ .l{
   transition:all .33s linear;
   -webkit-transition:all .33s linear;
+  background-color:blue;
 }
 
 .navList:nth-child(2):hover ~ .l {
@@ -73,6 +74,10 @@ body {
   -webkit-transition:all .33s linear;
 }
 
+.navList:nth-child(1):hover {
+  color:blue !important;
+}
+
 .navList:nth-child(2):hover {
   color:#e74c3c !important;
 }
@@ -96,4 +101,70 @@ body {
   background-color: #3b3b3b;
   padding: 20px;
   border-radius: 7px;
+  height: auto;
+}
+
+#login-submit, #reg-submit {
+  cursor: pointer;
+}
+
+.userInfo {
+  display: inline-block;
+  height: 150px;
+  border: 1px solid white;
+  width: 35%;
+  float: left;
+}
+
+.userInfo ul {
+  margin-top: 5px !important;
+}
+
+.userAvatar {
+  border-radius: 25px !important;
+  width: 150px;
+  height: 150px;
+  float: left;
+  padding: 10px;
+}
+
+@keyframes dev {
+  from {
+    color: red;
+  }
+  12% {
+    color: yellow;
+  }
+  25% {
+    color: green;
+  }
+  38% {
+    color: blue;
+  }
+  50% {
+    color: purple;
+  }
+  62% {
+    color: blue;
+  }
+  75% {
+    color: green;
+  }
+  88% {
+    color: yellow;
+  }
+  to {
+    color: red;
+  }
+}
+
+.dev {
+  animation: dev 10s infinite ease-in-out;
+}
+
+.animeWatched {
+  display: inline-block;
+  height: 150px;
+  border: 1px solid white;
+  margin-left: 10px;
 }
