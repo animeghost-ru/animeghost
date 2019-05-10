@@ -103,8 +103,8 @@ function startSess($row)
   $_SESSION['user'] = $row['login'];
   $_SESSION['id'] = $row['id'];
   $query = $db->prepare('UPDATE `users` SET `last_auth` = :time WHERE `id` = :id');
-  $query->bindParam(':time', time());
-  $query->bindParam(':id', $row['id']);
+  $query->bindValue(':time', time());
+  $query->bindValue(':id', $row['id']);
   $query->execute();
 }
 
@@ -120,7 +120,7 @@ function userInfo($id)
 {
   global $db;
   $query = $db->prepare('SELECT `id`, `login`, `mail`, `vk`, `avatar`, `access` FROM `users` WHERE `id` = :id');
-  $query->bindParam(':id', $id);
+  $query->bindValue(':id', $id);
   $query->execute();
   $row = $query->fetch();
   $user =
@@ -165,7 +165,7 @@ function reg()
     msg('registered', 'error');
   }
   $query = $db->prepare('SELECT `id` FROM `users` WHERE `mail`= :mail');
-  $query->bindParam(':mail', $_POST['mail']);
+  $query->bindValue(':mail', $_POST['mail']);
   $query->execute();
   if($query->rowCount() > 0)
   {
@@ -175,12 +175,12 @@ function reg()
   $pass = md5($_POST['pass']);
   $query = $db->prepare('INSERT INTO `users` (`login`, `mail`, `pass`, `regdate`, `avatar`, `vk`, `access`) VALUES (:login, :mail, :pass, :time, :avatar, :vk, :access)');
   $query->bindValue(':login', $_POST['login']);
-  $query->bindParam(':mail', $_POST['mail']);
-  $query->bindParam(':pass', $pass);
-  $query->bindParam(':time', $cfg['time']);
-  $query->bindParam(':avatar', 'http://i.imgur.com/xVwHlSg.jpg');
-  $query->bindParam(':vk', 'Не указано');
-  $query->bindParam(':access', '1');
+  $query->bindValue(':mail', $_POST['mail']);
+  $query->bindValue(':pass', $pass);
+  $query->bindValue(':time', $cfg['time']);
+  $query->bindValue(':avatar', 'http://i.imgur.com/xVwHlSg.jpg');
+  $query->bindValue(':vk', 'Не указано');
+  $query->bindValue(':access', '1');
   $query->execute();
   _mail($_POST['mail'], "Регистрация", "Вы успешно зарегистрировались на сайте www.Animeghost.ru");
   msg('success');
@@ -195,4 +195,8 @@ function _mail($email, $subject, $message){
 	$headers .= "From: {$cfg['email_from']} <{$cfg['email']}>\r\n";
 	mail($email, $subject, rtrim(chunk_split(base64_encode($message))), $headers);
 }
+
+/*function echoAnimeWatched($uid)
+{
+}*/
 ?>
