@@ -39,6 +39,11 @@ body {
 .navList:nth-child(1) ~ .l{
   transition:all .33s linear;
   -webkit-transition:all .33s linear;
+}
+
+.navList:nth-child(1):hover ~ .l{
+  transition:all .33s linear;
+  -webkit-transition:all .33s linear;
   background-color:blue;
 }
 
