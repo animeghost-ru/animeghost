@@ -5,6 +5,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/sqlload.php');
 //require($_SERVER['DOCUMENT_ROOT'].'/session.php');
 session_start();
 
+header('Content-Type: text/html; charset=utf-8');
 if (($_SERVER['REQUEST_URI'] == '/index') or ($_SERVER['REQUEST_URI'] == '/main') or ($_SERVER['REQUEST_URI'] == '/'))
 {
   head();
@@ -12,11 +13,12 @@ if (($_SERVER['REQUEST_URI'] == '/index') or ($_SERVER['REQUEST_URI'] == '/main'
   navMenu();
   bodyEnd();
 }
-elseif ($_SERVER['REQUEST_URI'] == '/anime')
+elseif (substr($_SERVER['REQUEST_URI'], 0, 6) == '/anime')
 {
   head('Список Аниме');
   bodyStart();
   navMenu();
+  animeList();
   bodyEnd();
 }
 elseif ($_SERVER['REQUEST_URI'] == '/manga')

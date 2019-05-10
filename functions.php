@@ -39,6 +39,12 @@ function profilePage()
 {
   echoProfilePage();
 }
+function animeList()
+{
+  parse_str(substr($_SERVER['REQUEST_URI'], 7));
+  getAnimePage($atitle);
+  //echo $atitle;
+}
 function checkUser()
 {
   if(empty($_SESSION['user']))
@@ -194,5 +200,38 @@ function _mail($email, $subject, $message){
 	$subject  = "=?utf-8?B?".base64_encode($subject)."?=";
 	$headers .= "From: {$cfg['email_from']} <{$cfg['email']}>\r\n";
 	mail($email, $subject, rtrim(chunk_split(base64_encode($message))), $headers);
+}
+
+function getUserWatchedAnime($user)
+{
+  global $cfg, $db;
+  $arr = [];
+  $str = '';
+  $query = $db->prepare('SELECT `laname` FROM `watch_status` WHERE `uid` = :uid');
+  $query->bindParam(':uid', $user);
+  $query->execute();
+
+	while($row = $query->fetch())
+  {
+		$arr[] = mb_strtolower($row['laname']);
+	}
+	foreach($arr as $array)
+  {
+		$str .= '<li><a href="/anime?atitle='.$array.'">'.$array.'</a></li>';
+	}
+	return $str;
+}
+
+function getAnimePage($atitle)
+{
+  global $cfg, $db;
+  $query = $db->prepare('SELECT * FROM `anime` WHERE `laname` = :atitle';)
+  $query->bindParam(':atitle', $atitle);
+  $query->execute();
+  $row = $query->fetch();
+
+  $animeInfo [
+    'name' = $row['name']
+  ]
 }
 ?>

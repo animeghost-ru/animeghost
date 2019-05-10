@@ -1,12 +1,12 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/sqlload.php');
-
-
 function echoProfilePage()
 {
     global $cfg;
 
+
     $user = userInfo($_SESSION['id']);
+    $animeList = getUserWatchedAnime($user['id']);
     $access = $user['access'];
 
     switch ($access) {
@@ -36,7 +36,7 @@ function echoProfilePage()
       </div>
       <div class="animeWatched">
         <ul>
-          <li>Naruto</li>
+          '.$animeList.'
         </ul>
       </div>
     </div>
