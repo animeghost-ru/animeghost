@@ -41,7 +41,7 @@ function profilePage()
 }
 function animeList()
 {
-  parse_str(substr($_SERVER['REQUEST_URI'], 7));
+  $atitle = parse_str(substr($_SERVER['REQUEST_URI'], 7));
   getAnimePage($atitle);
   //echo $atitle;
 }
@@ -225,14 +225,14 @@ function getUserWatchedAnime($user)
 function getAnimePage($atitle)
 {
   global $cfg, $db;
-  $query = $db->prepare('SELECT * FROM `anime` WHERE `laname` = :atitle';)
+  $query = $db->prepare('SELECT * FROM `anime` WHERE `laname` = :atitle');
   $query->bindParam(':atitle', $atitle);
   $query->execute();
   $row = $query->fetch();
 
-  $animeInfo [
+  $animeInfo = [
     'name' = $row['name'],
-    'status' = $row['status'],
+    'status' = $row['status']
   ];
 }
 ?>
