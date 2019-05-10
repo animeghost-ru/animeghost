@@ -233,6 +233,6 @@ function getAnimePage($atitle)
   $animeInfo [
     'name' = $row['name'],
     'status' = $row['status'],
-  ]
+  ];
 }
 ?>
