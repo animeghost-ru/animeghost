@@ -7,8 +7,8 @@ $cfg['creator'] = 'krain0v';
 $cfg['time'] = time();
 #database config#
 $cfg['hostname'] = 'localhost';
-$cfg['db'] = 'u0693174_animeghost';
-$cfg['dbuser'] = 'u0693174_krain0v';
+$cfg['db'] = 'a0302060_main';
+$cfg['dbuser'] = 'a0302060_main';
 $cfg['dbpass'] = 'Mesina226';
 
 #html file config#
