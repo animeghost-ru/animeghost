@@ -231,7 +231,8 @@ function getAnimePage($atitle)
   $row = $query->fetch();
 
   $animeInfo [
-    'name' = $row['name']
+    'name' = $row['name'],
+    'status' = $row['status'],
   ]
 }
 ?>
