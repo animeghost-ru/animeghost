@@ -4,6 +4,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/htmltemplates/body.php');
 require($_SERVER['DOCUMENT_ROOT'].'/htmltemplates/nav.php');
 require($_SERVER['DOCUMENT_ROOT'].'/htmltemplates/auth.php');
 require($_SERVER['DOCUMENT_ROOT'].'/htmltemplates/profile.php');
+require($_SERVER['DOCUMENT_ROOT'].'/htmltemplates/anime.php');
 require($_SERVER['DOCUMENT_ROOT'].'/sqlload.php');
 require($_SERVER['DOCUMENT_ROOT'].'/config.php');
 
@@ -41,9 +42,14 @@ function profilePage()
 }
 function animeList()
 {
-  $atitle = parse_str(substr($_SERVER['REQUEST_URI'], 7));
-  getAnimePage($atitle);
-  //echo $atitle;
+  if (substr($_SERVER['REQUEST_URI'], 7) == NULL)
+  {
+    animeSearch();
+  }
+
+  $atitle = parse_str(substr($_SERVER['REQUEST_URI'], 7), $urlcode);
+  $animeInfo = getAnimePage($urlcode['atitle']);
+  animePage($animeInfo);
 }
 function checkUser()
 {
@@ -229,10 +235,14 @@ function getAnimePage($atitle)
   $query->bindParam(':atitle', $atitle);
   $query->execute();
   $row = $query->fetch();
-
+  $genres = explode("&", $row['genre']);
   $animeInfo = [
-    'name' = $row['name'],
-    'status' = $row['status']
+    'name' => $row['name'],
+    'laname' => $row['laname'],
+    'status' => $row['status'],
+    'genres' => $genres
   ];
+
+  return $animeInfo;
 }
 ?>
